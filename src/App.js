@@ -26,15 +26,14 @@ export default function Page() {
   };
 
   const getImage = () => {
-   return noCount < 6 ? 
-     `images/image${noCount}.jpg` : `images/image${5}.jpg`
+    return `${process.env.PUBLIC_URL}/images/image${noCount < 6 ? noCount : 5}.jpg`;
   }
 
   return (
-    <div className="wrapper">
+    <div className="wrapper" style={{ cursor: `url('${process.env.PUBLIC_URL}/images/cursor.png'), auto `}}>
       {yesPressed ? (
         <>
-        <img className="image" alt="us" src={"./images/cursor.png"} />
+        <img className="image" alt="us" src={`${process.env.PUBLIC_URL}/images/doge.png`} />
         <div className="text-4xl font-bold my-4">yayyyy</div>
         <img className="gif" alt="gif"src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" />
         </>
@@ -50,7 +49,7 @@ export default function Page() {
           <div className="wrapper-images">
             <button
               className='button'
-              style={{ fontSize: yesButtonSize }}
+              style={{ fontSize: yesButtonSize, cursor: `url('${process.env.PUBLIC_URL}/images/cursor.png'), auto ` }}
               onClick={() => setYesPressed(true)}
             >
               Tak
@@ -58,6 +57,7 @@ export default function Page() {
             {noCount < 10 ?
             
             (<button
+              style={{ cursor: `url('${process.env.PUBLIC_URL}/images/cursor.png'), auto `}}
               className='button'
               onClick={handleNoClick}
             >

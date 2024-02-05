@@ -37,7 +37,6 @@ h1{
   animation: colorChange 3s infinite alternate, sizeChange 3s infinite alternate;
   font-size: 16px;
   transition: all 0.5s ease;
-  cursor: pointer;
 }
 
 .button:hover {
