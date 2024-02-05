@@ -30,7 +30,7 @@ export default function Page() {
   }
 
   return (
-    <div className="wrapper" style={{ cursor: `url('${process.env.PUBLIC_URL}/images/cursor.png'), auto `}}>
+    <div className="wrapper" style={{ cursor: `url(${process.env.PUBLIC_URL}/images/cursor.png), auto `}}>
       {yesPressed ? (
         <>
         <img className="image" alt="us" src={`${process.env.PUBLIC_URL}/images/doge.png`} />
@@ -49,7 +49,7 @@ export default function Page() {
           <div className="wrapper-images">
             <button
               className='button'
-              style={{ fontSize: yesButtonSize, cursor: `url('${process.env.PUBLIC_URL}/images/cursor.png'), auto ` }}
+              style={{ fontSize: yesButtonSize, cursor: `url(${process.env.PUBLIC_URL}/images/cursor.png), auto ` }}
               onClick={() => setYesPressed(true)}
             >
               Tak
@@ -57,7 +57,7 @@ export default function Page() {
             {noCount < 10 ?
             
             (<button
-              style={{ cursor: `url('${process.env.PUBLIC_URL}/images/cursor.png'), auto `}}
+              style={{ cursor: `url(${process.env.PUBLIC_URL}/images/cursor.png), auto `}}
               className='button'
               onClick={handleNoClick}
             >
