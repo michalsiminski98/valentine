@@ -1,8 +1,9 @@
 
 
-body{
-  background-color: rgba(148, 40, 170, 0.651);
+body {
+  background-image: linear-gradient(to bottom, rgb(245, 195, 255), rgba(138, 6, 123, 0.651));
 }
+
 .wrapper {
   width: 100vw;
   height: 100vh;
@@ -16,56 +17,45 @@ h1{
   text-align: center;
 }
 
+h1{
+  color: rgb(251, 176, 255);
+  font-family: 'Courgette', cursive;
+}
+
 .button {
   min-width: 100px;
   min-height: 40px;
   margin: 16px;
   z-index: 0;
   font-weight: 700;
-  border: 1px solid rgb(255, 215, 255);
+  border: 3px solid rgb(255, 215, 255);
   background-color: rgb(255, 186, 221);
+  color: rgb(252, 252, 252);
   letter-spacing: 1px;
   border-radius: 10px;
   position: relative;
+  animation: colorChange 3s infinite alternate, sizeChange 3s infinite alternate;
+  font-size: 16px;
+  transition: all 0.5s ease;
   cursor: pointer;
 }
-.button::after {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  border-radius: 10px;
+
+.button:hover {
+  background-color: rgb(252, 252, 252);
+  color: rgb(255, 186, 221);
+  transform: scale(1.1);
+  animation: none; /* Remove animation on hover */
 }
-.button::before {
-  content: "";
-  background: linear-gradient(
-    45deg,
-    #FF0000, #FF7300, #FFFB00, #48FF00,
-    #00FFD5, #002BFF, #FF00C8, #FF0000
-  );
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  background-size: 600%;
-  z-index: -1;
-  width: calc(100% + 4px);
-  height:  calc(100% + 4px);
-  filter: blur(8px);
-  animation: glowing 20s linear infinite;
-  transition: opacity .3s ease-in-out;
-  border-radius: 10px;
-  opacity: 0;
-}
+
 
 .image{
   max-width: 320px;
   margin: 0 16px;
+  opacity: 0.78;
 }
 .gif{
   max-width: 180px;
+  opacity: 0.78;
 }
 
 
@@ -87,6 +77,6 @@ h1{
 @media (max-width: 768px) {
   .image,
   .gif {
-    max-width: 50%; /* Further reduce size for very small screens */
+    max-width: 50%;
   }
 }

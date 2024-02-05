@@ -16,14 +16,9 @@ export default function Page() {
       "Nie",
       "Rozumiesz mnie?",
       "NieNieNieNieNieNie",
-      "X",
-      "nie i chu",
-      "Wykurwiaj",
       "smierdzisz",
       "NO NIEE",
-      "Nop",
-      "Zle klikasz",
-      "....",
+      "Zle klikasz jak cos",
       "Musisz byc bardzo zdesperowana",
     ];
 
@@ -39,20 +34,20 @@ export default function Page() {
     <div className="wrapper">
       {yesPressed ? (
         <>
-        <img className="image" src={"./images/cursor.png"} />
+        <img className="image" alt="us" src={"./images/cursor.png"} />
         <div className="text-4xl font-bold my-4">yayyyy</div>
-        <img className="gif" src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" />
+        <img className="gif" alt="gif"src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" />
         </>
       ) : (
         <>
         <div className="wrapper-images">     
         {windowWidth > 768 && (
-        <img className="image" src={getImage()} />)}
-          <img className="gif" src={"https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif"} />
-        <img className="image" src={getImage()} />
+        <img className="image"alt="us" src={getImage()} />)}
+          <img className="gif"alt="gif" src={"https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif"} />
+        <img className="image"alt="us" src={getImage()} />
         </div>
           <h1>Bonżur, czy zostaniesz moją walentynką?</h1>
-          <div>
+          <div className="wrapper-images">
             <button
               className='button'
               style={{ fontSize: yesButtonSize }}
@@ -60,13 +55,15 @@ export default function Page() {
             >
               Tak
             </button>
-            <button
+            {noCount < 10 ?
+            
+            (<button
               className='button'
               onClick={handleNoClick}
             >
               {noCount === 0 ? "Nie" : getNoButtonText()}
-            </button>
-          </div>
+            </button>):( <></>)}
+          </div> 
         </>
       )}
     </div>
